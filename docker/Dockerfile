@@ -38,6 +38,8 @@ COPY opt /opt/
 
 COPY etc /etc/
 
-RUN sed -i '1 i\127.0.0.1    mx0.rpi.br' /etc/hosts
+#RUN sed -i '1 i\127.0.0.1    mx0.rpi.br' /etc/hosts
+
+RUN echo "127.0.0.1   mx0.rpi.br"  >  /etc/hosts
 
 CMD ["/bin/bash", "/opt/start.sh", "-bash"]
