@@ -1,6 +1,7 @@
 #!/bin/sh
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 
+echo "127.0.0.1   mx0.rpi.br"  >  /etc/hosts
 
 sleep 5
 HOSTNAME="mx0"
