@@ -1,8 +1,8 @@
 #!/bin/sh
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 sleep 5
-HOSTNAME=$(hostname -s)
-DOMAIN=$(hostname -d)
+HOSTNAME="mx0"
+DOMAIN="rpi.br"
 CONTAINERIP=$(ifconfig |grep -A1 eth0 |grep inet|awk '{print $2}')
 RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
