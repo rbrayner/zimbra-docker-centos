@@ -2,6 +2,7 @@
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 
 echo "127.0.0.1 localhost localhost.localdomain"  >  /etc/hosts
+echo "200.133.0.157 mx0 mx0.rpi.br"  >>  /etc/hosts
 
 sleep 5
 HOSTNAME="mx0"
