@@ -1,13 +1,14 @@
 #!/bin/sh
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 
-echo "127.0.0.1 localhost localhost.localdomain"  >  /etc/hosts
-container_ip=`ifconfig |grep inet |awk -F ' ' '{print $2}' |head -1`
-echo "$container_ip mx0.rpi.br mx0"  >>  /etc/hosts
-
-sleep 5
 HOSTNAME="mx0"
 DOMAIN="rpi.br"
+
+echo "127.0.0.1 localhost localhost.localdomain"  >  /etc/hosts
+container_ip=`ifconfig |grep inet |awk -F ' ' '{print $2}' |head -1`
+echo "$container_ip $HOSTNAME.$DOMAIN $HOSTNAME"  >>  /etc/hosts
+
+sleep 5
 CONTAINERIP=$(ifconfig |grep -A1 eth0 |grep inet|awk '{print $2}')
 RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
