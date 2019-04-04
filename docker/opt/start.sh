@@ -1,8 +1,8 @@
 #!/bin/sh
 ## Preparing all the variables like IP, Hostname, etc, all of them from the container
 
-HOSTNAME="mail-teste"
-DOMAIN="pop-pe.rnp.br"
+HOSTNAME="mail"
+DOMAIN="rpi.br"
 
 echo "127.0.0.1 localhost localhost.localdomain"  >  /etc/hosts
 container_ip=`ifconfig |grep inet |awk -F ' ' '{print $2}' |head -1`
